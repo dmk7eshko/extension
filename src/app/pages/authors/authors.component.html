@@ -1,0 +1,10 @@
+<nav>
+    <a routerLink="/">Главная </a>
+    <a routerLink="/login">login </a>
+    <a routerLink="/contact">contact </a>
+    <!-- <a routerLink="/authors">authors </a> -->
+</nav>
+<p>authors works!</p>
+<ul class="card" *ngFor="let author of authorsToShow">
+    <li>{{author.docs[0].name}}</li>
+</ul>

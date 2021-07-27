@@ -14,7 +14,7 @@ export class AuthorsService {
   serviceURL: string = 'https://openlibrary.org/search/authors.json?q=j%20k%20';
   constructor(private http: HttpClient){ }
       
-    getData() : Observable<Author[]>{
+   getData() : Observable<Author[]>{
         return this.http.get<Author>(this.serviceURL).pipe(
           map(item => {
             return [item];

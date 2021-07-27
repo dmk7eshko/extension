@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output  } from '@angular/core';
 import { AuthorsService } from './authors.service';
 import { Author } from '../../entities/author.model';
-import { tap } from 'rxjs/operators';
+import { AuthorDocs } from '../../entities/authorDocs.model';
+// import { tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-authors',
@@ -9,19 +10,24 @@ import { tap } from 'rxjs/operators';
   styleUrls: ['./authors.component.scss']
 })
 export class AuthorsComponent implements OnInit {
+  
   authors: Author[] = [];
-  authorsToShow: Author[] = [];
+  AuthorDocs  = [];
+
   constructor(private authorsService: AuthorsService) { }
 
   ngOnInit(){
     this.authorsService.getData().pipe(
-      tap(x => console.log(x))
+      // tap(x => console.log(x))
     ).subscribe((data) => 
       {
-        this.authors=data;
-        this.authorsToShow = this.authors;
-      });
+        this.authors = data;
+        this.AuthorDocs = this.authors
+          .map(item => item.docs
+            // .map(item =>  item.name )  
+        )
+        // this.AuthorDocs.sort();
+      })  
   }
-
 }
 

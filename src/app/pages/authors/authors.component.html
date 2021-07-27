@@ -4,7 +4,11 @@
     <a routerLink="/contact">contact </a>
     <!-- <a routerLink="/authors">authors </a> -->
 </nav>
-<p>authors works!</p>
-<ul class="card" *ngFor="let author of authorsToShow">
-    <li>{{author.docs[0].name}}</li>
-</ul>
+<p>All authors in list:</p>
+
+<ol id="author" *ngFor="let authors of AuthorDocs">
+    <li *ngFor="let author of authors.sort()">
+        <a [routerLink]="['/authors', author.key]">{{author.name}} - {{author.key}}</a>
+    </li>
+    
+</ol>

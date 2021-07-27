@@ -12,7 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
     // RouterModule.forRoot(appRoutes)
   ],
   providers: [],

@@ -8,7 +8,11 @@
 
 <ol id="author" *ngFor="let authors of AuthorDocs">
     <li *ngFor="let author of authors.sort()">
-        <a [routerLink]="['/authors', author.key]">{{author.name}} - {{author.key}}</a>
+        <!-- <a [routerLink]="['/authors', author.key]">{{author.name}} - {{author.key}}</a> -->
+        <a routerLink="/authors/{{ author.key }}">{{author.name}} - {{author.key}}</a>
     </li>
-    
 </ol>
+<input type="button" (click)="LoadMore()" value="showMore">
+<br>
+<br>
+<button>sdvre</button>

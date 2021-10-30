@@ -9,13 +9,13 @@ import { CalculatorService } from 'src/app/services/calculator.service';
 export class CalculatorComponent implements OnInit {
   @HostBinding('class.calculator') readonly baseCss: boolean = true;
 
-  constructor(private readonly calculatorService: CalculatorService) { 
-    // console.log(calculatorService.result)
-    // calculatorService.result = 3
-  }
- 
+  constructor() {}
+  
+  // @Input из result component
+  // обновить стейт
 
   ngOnInit() {
+
   }
 
 }

@@ -20,7 +20,10 @@ export class CalculatorService {
   onSelectOperator(op: String) {
     this.operand += ` ${op} `;
     this.operand$.next(this.operand);
-    console.log(op);
+  }
+
+  onInputBtn(){
+    
   }
 
   onSelectEqual() {
@@ -29,6 +32,7 @@ export class CalculatorService {
       this.currentNumber = eval(this.result);
       console.log('currentNumber', this.currentNumber);
       this.operand$.next(this.currentNumber);
+      this.operand = this.currentNumber;
     }
   } 
 

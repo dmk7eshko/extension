@@ -1,0 +1,17 @@
+:host(.calculator-buttons) {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+}
+
+button {
+  width: 30%;
+  height: 80px;
+  margin: 1%;
+  cursor: pointer;
+  font-size: 30px;
+}

@@ -1,4 +1,4 @@
-export interface AuthorDocs{
+export interface AuthorDocs {
         key: string,
         text: object[],
         type: string,
